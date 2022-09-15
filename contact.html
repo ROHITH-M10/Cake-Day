@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <style>
+        body{
+            background-image: url("background_w.jpg");
+            padding-top: 150px;
+            
+        }
+        table{
+            width: 80%;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 1px 1px 10px black;
+            padding-top: 30px;
+            background-color: white;
+        }
+
+        i{
+            padding-right: 30px;
+            
+        }
+
+        .feedback{
+            font-family: cursive;
+            font-size: 50px;
+            padding-bottom: 40px;
+            font-family:cursive;
+            
+            
+        }
+        input{
+            padding: 10px;
+            font-size: 20px;
+            font-family:cursive;
+            font-weight: 1000;
+            color: rgb(0, 0, 0);
+            border: solid 4px rgb(0, 0, 0);
+            border: none;
+            border-bottom: solid 5px black;
+
+
+        }
+        textarea{
+            font-size: 20px;
+            text-align: center;
+            font-family: cursive;
+            font-weight: 1000;
+            color: rgb(0, 0, 0);
+            border: solid 5px rgb(0, 0, 0);
+            padding: 30px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        
+        .button{
+            background-color: rgb(119, 119, 119);
+            border: solid 3px rgb(88, 87, 87);
+            width: 250px;
+        }
+        .button:hover{
+            opacity: .8;
+
+        }
+        
+        
+    </style>
+    <body>
+
+        <table >
+            <tr>
+                <td>
+                    <div class="feedback">We would love to  hear from you <i class="fa fa-smile-o" style="font-size:50px"></i></div>
+
+                </td>
+
+                <td width="60%">
+                    <form action="" onsubmit="return validate()">
+                        <i class="fa fa-user" style="font-size:30px"></i>
+                        <input type="text" placeholder="Name" id="name" required>
+                        <br><br><br>
+                        <i class="fa fa-envelope" style="font-size:30px"></i>
+                        <input type="email" name="email" id="email" placeholder="xyz@gmail.com" required>
+                        <br><br><br>
+                        <textarea name="message" id="message" cols="30" rows="6" placeholder="Message / Suggestions" required style="resize:none;" maxlength="300"></textarea>
+                        <br><br><br>
+                        <div class="buttons">
+    
+                            <input type="reset" value="Reset" class="button">
+                            <input type="submit" value="Send Message" class="button" >
+                            
+    
+                        </div>
+                        
+                        
+                    </form>
+                </td>
+                
+            </tr>
+        </table>
+        
+               
+                
+          
+    </body>
+</html>
+
+<script>
+    function validate(){
+        alert("Thank you for the feedback");
+        return true;
+    }
+    </script>

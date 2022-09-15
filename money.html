@@ -1,0 +1,341 @@
+<html>
+    <head>
+            <title>Payment</title>
+    </head>
+
+    <style>
+        legend{
+            text-align: center;
+            
+        }
+        body{
+            background-image: url("background_b.jpg");
+            
+        }
+        fieldset{
+            margin-left: 30%;
+            margin-right: 30%;
+            margin-top: 50px;
+            height: 80%;
+            font-size: 30px;
+            background-color: rgb(255, 255, 255);
+            font-family: cursive;
+            
+            
+        }
+        input{
+            width: 330px;
+            height: 40px;
+            font-family:"cursive";
+            font-weight: 1000;
+            font-size: large;
+            padding-left: 5px;
+            border: none;
+            border-bottom:solid 5px black ;
+            letter-spacing: 1px;
+
+
+            
+        }
+        .card{
+            width: 65px;
+            margin-right: 15px;
+            text-align: center;
+
+        }
+        
+        #month,#year{
+            width: 70px;
+            text-align: center;
+            margin-right: 15px;
+        }
+        table{
+            font-size: 20px;
+
+            
+            
+        }
+        .title{
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(9, 4, 113);
+            color: aliceblue;
+
+        }
+        #cvv{
+            width: 60px;
+        }
+
+        .button{
+            width: 150px;
+            color: black;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            border: solid 3px black;
+            font-family:cursive;
+            cursor:pointer;
+
+            
+            
+            
+             
+        }
+        .button:hover{
+            transform: scale(1.01);
+            color: rgb(95, 95, 95);
+            background-color: rgb(226, 223, 223);
+        }
+
+        .alert{
+            height: 60px;
+            color: rgb(255, 0, 0);
+            font-weight: 1000;
+            text-decoration: overline;
+        }
+        table{
+            font-weight: 1000;
+        }
+
+        input:focus{
+            background-color: rgb(255, 255, 255);
+        }
+        
+    
+
+        
+    </style>
+
+    <body>
+        <fieldset>
+            <div class="title">Payment</div>
+            
+
+
+
+                <form action="submit.html" target="_self" onsubmit="return validate()">
+
+                    <div class="forms">
+                        <table cellspacing="20px">
+                        
+                            <tr>
+                                <td>Firstname</td>
+                               <td><input type="text"  name="fname" id="fname" ></td> 
+                            </tr>  
+                            
+                            
+                            <tr>
+                                <td>Lastname</td>
+                               <td><input type="text"  name="lname" id="lname"></td> 
+                            </tr>
+
+
+
+                            <tr>
+                                <td>Card Number</td>
+                               <td>
+                                <table>
+                                    <tr >
+                                    <td>
+                                        <input type="text" name="card" placeholder="XXXX" class="card" id="c1"  maxlength="4">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="card" placeholder="XXXX" class="card" id="c2" maxlength="4">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="card" placeholder="XXXX" class="card" id="c3" maxlength="4">
+
+                                    </td>
+                                    <td>
+                                        <input type="text" name="card" placeholder="XXXX" class="card" id="c4" maxlength="4">
+
+                                    </td>
+                                        
+                                    </tr>
+                                    
+                                </table>
+                                
+                            </td> 
+                            </tr>
+                            <tr>
+                                <td>CVV</td>
+                                <td><input type="text" placeholder="XXX" name="cvv" id="cvv"  maxlength="3"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Expiry Date</td>
+                                <td>
+                                    <input type="text" placeholder="MM" name="month" id="month"  maxlength="2">
+                                    <input type="text" name="year" id="year" placeholder="YYYY"  maxlength="4">
+                                </td>
+                            </tr>
+
+
+                            <tr class="alert">
+                                <td colspan="2"><div id="notify"></div></td>
+                            </tr>
+                
+                        </table>
+
+                        <div> 
+                            <input type="button" value="BACK" class="button" onclick="back()">
+                            <input type="reset" value="RESET" class="button" onclick="remove()">
+                            <input type="submit" value="SUBMIT" class="button" >
+                            </div>
+        
+                            
+        
+                             
+                                
+                              
+                            
+        
+                        
+        
+        
+                    </div>
+                
+                    
+        
+        
+                   
+                </form>
+                
+            
+        </fieldset>
+    </body>
+</html>
+
+<script>
+
+        
+
+    
+
+
+    function validate(){
+
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+
+        var c1 = document.getElementById("c1").value;
+        var c2 = document.getElementById("c2").value;
+        var c3 = document.getElementById("c3").value;
+        var c4 = document.getElementById("c4").value;
+        var c1s=c1.toString();
+        var c2s=c2.toString();
+        var c3s=c3.toString();
+        var c4s=c4.toString();
+     
+        var cvv = document.getElementById("cvv").value;
+        var cvvs=cvv.toString();
+        
+
+        var m = document.getElementById("month").value;
+        var y = document.getElementById("year").value;
+        var ms=m.toString();
+        var ys=y.toString();
+
+        var date = new Date();
+        year = date.getFullYear();
+        month= date.getMonth()+1;
+
+        
+            if (fname=="") {
+                document.getElementById("notify").innerHTML="Firstname cannot be empty";
+                
+                return false;
+            }
+
+            else if (lname=="") {
+                document.getElementById("notify").innerHTML="Lastname cannot be empty";
+                return false;
+            }
+
+            else if(c1==""||c2==""||c3==""||c4==""){
+                document.getElementById("notify").innerHTML="Invalid card number";
+                return false;
+            }
+
+            else if((isNaN(c1))||(isNaN(c2))||(isNaN(c3))||(isNaN(c4))){
+                document.getElementById("notify").innerHTML="Invalid card number";
+                return false;
+
+            }
+            else if(c1s.length!=4||c2s.length!=4||c3s.length!=4||c4s.length!=4){
+                document.getElementById("notify").innerHTML="Invalid card number";
+                return false;
+            }
+            
+
+            else if((isNaN(cvv))||(cvv=="")){
+                document.getElementById("notify").innerHTML="Invalid CVV";
+                return false;
+            }
+            
+
+            else if(cvvs.length!=3){
+                document.getElementById("notify").innerHTML="Invalid CVV";
+                return false;
+            }
+
+            else if((isNaN(m))||(m=="")){
+                document.getElementById("notify").innerHTML="Invalid expiry date";
+                return false;
+            }
+
+            else if((isNaN(y))||(y=="")){
+                document.getElementById("notify").innerHTML="Invalid expiry date";
+                return false;
+            }
+
+            else if ((y<year)){
+                document.getElementById("notify").innerHTML="Invalid expiry date";
+                return false;
+
+            }
+
+            
+            else if (m>12){
+                document.getElementById("notify").innerHTML="Invalid expiry date";
+                return false;
+
+            }
+            
+            else if ((year==y)){
+                if(m<month){
+
+                    document.getElementById("notify").innerHTML="Invalid expiry date";
+                    return false;
+
+                }
+                
+            }
+
+            else{
+                return true;
+            }
+    }
+
+
+
+
+    function back(){
+        var close = confirm("Cancel Order ?");
+        if (close==true){
+            history.back();
+        }
+    }
+
+    function remove(){
+    document.getElementById("notify").innerHTML=" ";
+
+}
+
+    
+
+
+
+
+</script>

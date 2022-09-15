@@ -1,0 +1,382 @@
+<html>
+    <head>
+        <title>place Order</title>
+
+
+       
+    </head>
+
+
+
+
+    <style>
+        .legend{
+            width: 40%;
+            padding-left:28%;
+            padding-right:30%;
+            padding-top: 20px;
+            font-size: 50px;
+            padding-bottom: 10px;
+            background-image: url("background_b.jpg");
+            background-size: cover;
+            
+        }
+        fieldset{
+            padding: 20px;
+            font-family: cursive;
+            background-color: rgb(255, 255, 255);
+            border-radius: 2px;
+            height: 92%;
+            text-align: center;
+            
+        }
+        legend{
+            text-align: center;
+            padding-top: 10px;
+            
+            
+            
+        }
+        table tr td{
+            padding:8px;
+
+        }
+        input{
+            width: 330px;
+            height: 40px;
+            font-family:"cursive";
+            font-weight: 1000;
+            font-size: large;
+            padding-left: 5px;
+            border: none;
+            border-bottom:solid 5px black ;
+
+            
+        }
+
+        input:focus{
+            background-color: rgb(255, 255, 255);
+
+        }
+        select:focus{
+            background-color: rgb(255, 255, 255);
+
+        }
+
+
+
+        .button{
+            width: 150px;
+            color: black;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            border: solid 3px black;
+            font-family:cursive;
+            cursor:pointer;
+
+            
+            
+            
+             
+        }
+        .button:hover{
+            transform: scale(1.01);
+            color: rgb(95, 95, 95);
+            background-color: rgb(226, 223, 223);
+        }
+        td{
+            font-size: 20px;
+            
+        }
+        #cake_names{
+            padding: 15px;
+            font-size: 15px;
+            font-family:cursive;
+            font-weight: 1000;
+            border-radius: 10px;
+            border: solid 2px;
+            width: 330px;
+            border: solid 3px black;
+        }
+        #notify{
+            font-size: 20px;
+            color: rgb(255, 0, 0);
+            font-weight: 1000;
+            padding-top: 5px;
+            text-decoration: overline;
+            font-family: cursive;
+            
+
+        }
+        .date{
+            width: 150px;
+            height: 50px;
+            border-radius: 10px;
+        }
+
+        .clicks{
+            margin-top: 5px;
+        }
+
+        
+
+
+
+        
+    
+
+    </style>
+
+    <body class="legend">
+        
+
+                            <fieldset>
+                                <div style="background-color: rgb(9, 4, 113);color: aliceblue;">Place Your Order</div>
+                    
+                                <form action="money.html" onsubmit="return validate()">
+                                <div class="forms">
+                                    
+                                    <table >
+                                        
+                                        
+                                        <tr>
+                                            
+                                            <td>First Name</td>
+                                            <td><input type="text" name="fname" id="fname"></td>
+                                            
+                                        </tr>
+                    
+                                        <tr>
+                                            <td>Last Name</td>
+                                            <td><input type="text" name="lname" id="lname"></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>Phone Number</td>
+                                            <td><input type="text" name="phone" id="phone"></td>
+                                            
+                                        </tr>
+                    
+                                        <tr>
+                                            <td>Email</td>
+                                            <td><input type="text" name="email" id="email" placeholder="xyz@gmail.com"></td>
+                                            
+                                        </tr>
+                    
+                                        <tr>
+                                            <td>Cake (per kg)</td><!--cake (per kg ||  onblur="value_cake()" ????)-->
+                                            <td><select name="cake_names" id="cake_names">
+                                                <option value="Chocolate Truffle">Chocolate Truffle <div class="price">- Rs 1200 </div></option>
+                                                <option value="Black Forest">Black Forest <div class="price">- Rs 600 </div></option>
+                                                <option value="White Forest">White Forest <div class="price">- Rs 600 </div></option>
+                                                <option value="Red Velvet">Red Velvet <div class="price">- Rs 850 </div></option>
+                                                <option value="Almond Chocolate">Almond Chocolate <div class="price">- Rs 800 </div></option>
+                                                <option value="Bounty Chocolate">Bounty Chocolate <div class="price">- Rs 800 </div></option>
+                                                <option value="Caramel">Caramel <div class="price">- Rs 700 </div></option>
+                                                <option value="Cheese Cake">Cheese Cake <div class="price">- Rs 600 </div></option>
+                                                <option value="Chocolate Excess Cake">Chocolate Excess Cake <div class="price">- Rs 1000 </div></option>
+                                                <option value="Fruit Cake">Fruit Cake <div class="price">- Rs 600 </div></option>
+                                                <option value="Oreo Cake">Oreo Cake <div class="price">- Rs 800 </div></option>
+                                                <option value="White Chocolate">White Chocolate <div class="price">- Rs 900 </div></option>
+                                                <option value="Blueberry">Blueberry <div class="price">- Rs 700 </div></option>
+                                                <option value="Hazelnut">Hazelnut <div class="price">- Rs 800 </div></option>
+                                                <option value="Irish Coffee">Irish Coffee <div class="price">- Rs 850 </div></option>
+                                                <option value="Vancho">Vancho <div class="price">- Rs 900 </div></option>
+                                                <option value="Butterscotch">Butterscotch <div class="price">- Rs 750 </div></option>
+                                                <option value="Pineapple">Pineapple <div class="price">- Rs 650 </div></option>
+                                                <option value="Mango">Mango <div class="price">- Rs 600 </div></option>
+                                                <option value="Strawberry">Strawberry <div class="price">- Rs 700 </div></option>
+                    
+                                            </select></td>
+                                            
+                                        </tr>
+                    
+                                        <tr>
+                                            <td>Number of cakes</td>
+                                            <td><input type="number" name="quantity" id="quantity" ></td>
+                                            
+                                            
+                                        </tr>
+                    
+                                        <tr>
+                                            <td>Cake Due Date</td>
+                                            <td><input type="date" name="dates" id="dates" class="dates" >
+                                            
+                                                
+                                            
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="padding:0px; height:40px;"><div id="notify"></div></td>
+                                        </tr>
+                    
+                                    </table>
+                    
+                    
+                                </div>
+
+                           
+                    
+                                
+                            
+                                
+                    
+                    
+                                <div class="clicks"> 
+                                <input type="button" value="BACK" class="button" onclick="back()">
+                                <input type="reset" value="RESET" class="button">
+                                <input type="submit" value="SUBMIT" class="button" >
+                                </div>
+                    
+                                </form>
+                            </fieldset>
+                            
+        
+        
+        
+        
+                            
+                            
+                   
+                
+
+                
+
+                    
+
+       
+
+        
+        
+
+    </body>
+
+</html>
+
+
+<script>
+
+
+
+    
+
+
+    function validate(){
+    
+        var fname = document.getElementById("fname").value;
+        var lname = document.getElementById("lname").value;
+        var Phone = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        var qty = document.getElementById("quantity").value;
+        var dt = document.getElementById("dates").value;
+        dt = dt.toString();
+        
+        
+
+        var ip_day=dt.substr(8,10);
+        ip_day=parseInt(ip_day);
+        
+
+        var ip_month=dt.substr(5,7);
+        ip_month=parseInt(ip_month);
+
+        var ip_year=dt.substr(0,4);
+        ip_year=parseInt(ip_year);
+
+
+         
+        
+        
+
+        
+ 
+
+
+
+
+        var at = email.indexOf("@");
+        var dot = email.lastIndexOf(".");
+
+        var date = new Date();
+        year = date.getFullYear();
+        month= date.getMonth()+1;
+        day = date.getDate();
+
+        
+        
+
+
+
+
+
+
+        if (fname=="") {
+            document.getElementById("notify").innerHTML="Firstname cannot be empty";
+            return false;
+        }
+
+        else if (lname=="") {
+            document.getElementById("notify").innerHTML="Lastname cannot be empty";
+            return false;
+        }
+
+        else if ((Phone =="")||(Phone.length!=10)||(isNaN(Phone))){
+            document.getElementById("notify").innerHTML="Please enter a valid Phone Number";
+            return false;
+        }
+
+        else if ((at<1)||(dot-at)<2){
+            document.getElementById("notify").innerHTML="Please enter a valid Email";
+            return false;
+        }
+
+        
+        else if(qty<1){
+            document.getElementById("notify").innerHTML="Please enter valid number of cakes";
+            return false;
+
+        }
+        else if(dt==""){
+            document.getElementById("notify").innerHTML="Please select date";
+            return false;
+        }
+
+        
+        else if(ip_year<year){
+            document.getElementById("notify").innerHTML="Please select a valid date";
+            return false;
+        }
+        else if((ip_year==year)&&(ip_month<month)){
+            document.getElementById("notify").innerHTML="Please select a valid date";
+            return false;
+        }
+        else if((ip_year==year)&&(ip_month==month)&&(ip_day<=day)){
+            document.getElementById("notify").innerHTML="Please select a valid date";
+            return false;
+        }
+
+        
+        
+
+        else{
+            confirm("Order Placed");
+            return true;
+        }
+
+        
+        
+   
+    }
+
+function back(){
+        var close = confirm("Cancel Order ?");
+        if (close==true){
+            window.close();
+        }
+    }
+
+
+
+</script>
